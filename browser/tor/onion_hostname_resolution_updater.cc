@@ -28,6 +28,10 @@ OnionHostnameResolutionUpdater::OnionHostnameResolutionUpdater(
 
 OnionHostnameResolutionUpdater::~OnionHostnameResolutionUpdater() = default;
 
+void OnionHostnameResolutionUpdater::Shutdown() {
+  pref_change_registrar_.RemoveAll();
+}
+
 void OnionHostnameResolutionUpdater::UpdateNetworkContexts() {
   const bool onion_only =
       pref_change_registrar_.prefs()->GetBoolean(prefs::kOnionOnlyInTorWindows);

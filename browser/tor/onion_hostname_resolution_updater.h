@@ -28,6 +28,9 @@ class OnionHostnameResolutionUpdater : public KeyedService {
       const OnionHostnameResolutionUpdater&) = delete;
   ~OnionHostnameResolutionUpdater() override;
 
+  // KeyedService:
+  void Shutdown() override;
+
  private:
   void UpdateNetworkContexts();
 
