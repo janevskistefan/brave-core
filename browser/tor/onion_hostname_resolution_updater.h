@@ -34,8 +34,8 @@ class OnionHostnameResolutionUpdater : public KeyedService {
  private:
   void UpdateNetworkContexts();
 
-  raw_ptr<content::BrowserContext> context_;
   PrefChangeRegistrar pref_change_registrar_;
+  raw_ptr<content::BrowserContext> context_;
 };
 
 }  // namespace tor
